@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>NovaAPI Documentation</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ================= SIDEBAR ================= -->
+
+  <div class="sidebar" id="sidebar">
+
+    <div class="logo-area">
+      <h2>NovaAPI</h2>
+      <p>Developer Documentation</p>
+    </div>
+
+    <ul class="nav-links">
+
+      <li>
+        <a href="#dashboard">
+          <i class="bi bi-grid"></i>
+          Dashboard
+        </a>
+      </li>
+
+      <li>
+        <a href="#authentication">
+          <i class="bi bi-shield-lock"></i>
+          Authentication
+        </a>
+      </li>
+
+      <li>
+        <a href="#endpoints">
+          <i class="bi bi-diagram-3"></i>
+          Endpoints
+        </a>
+      </li>
+
+      <li>
+        <a href="#examples">
+          <i class="bi bi-code-slash"></i>
+          Examples
+        </a>
+      </li>
+
+      <li>
+        <a href="#response">
+          <i class="bi bi-filetype-json"></i>
+          Responses
+        </a>
+      </li>
+
+      <li>
+        <a href="#faq">
+          <i class="bi bi-question-circle"></i>
+          FAQ
+        </a>
+      </li>
+
+    </ul>
+
+  </div>
+
+  <!-- ================= MAIN CONTENT ================= -->
+
+  <div class="main-content">
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar navbar-expand-lg top-navbar">
+
+      <div class="container-fluid">
+
+        <button class="btn menu-btn d-lg-none" id="menuBtn">
+          <i class="bi bi-list"></i>
+        </button>
+
+        <div class="search-box">
+          <input type="text" placeholder="Search endpoints..." id="searchInput">
+          <i class="bi bi-search"></i>
+        </div>
+
+        <button class="btn theme-btn" id="themeToggle">
+          <i class="bi bi-moon-fill"></i>
+        </button>
+
+      </div>
+
+    </nav>
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero-section" id="dashboard">
+
+      <div>
+
+        <span class="badge bg-primary mb-3">
+          REST API v2.0
+        </span>
+
+        <h1>Modern API Documentation</h1>
+
+        <p>
+          Powerful APIs for developers with secure authentication,
+          lightning-fast endpoints, and real-time responses.
+        </p>
+
+        <div class="hero-buttons">
+
+          <button class="btn btn-primary btn-lg">
+            Get Started
+          </button>
+
+          <button class="btn btn-outline-light btn-lg">
+            View Status
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ================= STATS ================= -->
+
+    <section class="stats-section container-fluid">
+
+      <div class="row g-4">
+
+        <div class="col-md-3">
+          <div class="stats-card">
+            <i class="bi bi-lightning-charge"></i>
+            <h3>99.9%</h3>
+            <p>API Uptime</p>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="stats-card">
+            <i class="bi bi-code-square"></i>
+            <h3>45+</h3>
+            <p>Endpoints</p>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="stats-card">
+            <i class="bi bi-globe"></i>
+            <h3>120+</h3>
+            <p>Countries</p>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="stats-card">
+            <i class="bi bi-people"></i>
+            <h3>15K+</h3>
+            <p>Developers</p>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ================= AUTH SECTION ================= -->
+
+    <section class="content-section" id="authentication">
+
+      <div class="section-header">
+        <h2>Authentication</h2>
+        <p>Use Bearer Token to authorize requests.</p>
+      </div>
+
+      <div class="doc-card">
+
+        <div class="card-top">
+
+          <div>
+            <span class="method post">POST</span>
+            <span class="endpoint-url">/auth/login</span>
+          </div>
+
+        </div>
+
+<pre><code>
+POST /api/v2/auth/login
+
+{
+   "email":"developer@novaapi.com",
+   "password":"********"
+}
+</code></pre>
+
+        <button class="btn btn-primary copy-btn">
+          Copy Request
+        </button>
+
+      </div>
+
+    </section>
+
+    <!-- ================= ENDPOINTS ================= -->
+
+    <section class="content-section" id="endpoints">
+
+      <div class="section-header">
+        <h2>API Endpoints</h2>
+        <p>Manage products, users, analytics and orders.</p>
+      </div>
+
+      <!-- CARD -->
+
+      <div class="endpoint-card searchable">
+
+        <div class="endpoint-header">
+
+          <div>
+            <span class="method get">GET</span>
+            <span class="endpoint-url">/api/v2/users</span>
+          </div>
+
+          <button class="toggle-btn">
+            <i class="bi bi-chevron-down"></i>
+          </button>
+
+        </div>
+
+        <div class="endpoint-body">
+
+          <p>Fetch all users from database.</p>
+
+<pre><code>
+GET https://api.nova.com/v2/users
+</code></pre>
+
+          <table class="table table-dark table-striped">
+
+            <thead>
+              <tr>
+                <th>Parameter</th>
+                <th>Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+
+            <tbody>
+
+              <tr>
+                <td>page</td>
+                <td>integer</td>
+                <td>Page Number</td>
+              </tr>
+
+              <tr>
+                <td>limit</td>
+                <td>integer</td>
+                <td>Users Per Page</td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+      <!-- ================= API TESTER ================= -->
+<section class="content-section" id="tester">
+
+  <div class="section-header">
+    <h2>Try API Live 🚀</h2>
+    <p>Test endpoints in real time (simulated backend)</p>
+  </div>
+
+  <div class="doc-card">
+
+    <label>Endpoint</label>
+    <input id="endpointInput" class="form-control mb-3"
+      placeholder="Example: /users">
+
+    <label>Method</label>
+    <select id="methodInput" class="form-control mb-3">
+      <option>GET</option>
+      <option>POST</option>
+      <option>DELETE</option>
+    </select>
+
+    <label>Body (JSON)</label>
+    <textarea id="bodyInput" class="form-control mb-3"
+      rows="4"
+      placeholder='{"name":"John"}'></textarea>
+
+    <button class="btn btn-primary" onclick="sendRequest()">
+      Send Request
+    </button>
+
+    <hr>
+
+    <h5>Response:</h5>
+    <pre id="responseBox">{}</pre>
+
+  </div>
+
+</section>
+
+      <!-- CARD -->
+
+      <div class="endpoint-card searchable">
+
+        <div class="endpoint-header">
+
+          <div>
+            <span class="method post">POST</span>
+            <span class="endpoint-url">/api/v2/products</span>
+          </div>
+
+          <button class="toggle-btn">
+            <i class="bi bi-chevron-down"></i>
+          </button>
+
+        </div>
+
+        <div class="endpoint-body">
+
+          <p>Create a new product.</p>
+
+<pre><code>
+POST https://api.nova.com/v2/products
+</code></pre>
+
+<pre><code>
+{
+   "name":"Macbook Pro",
+   "price":1999,
+   "stock":12
+}
+</code></pre>
+
+        </div>
+
+      </div>
+
+      <!-- CARD -->
+
+      <div class="endpoint-card searchable">
+
+        <div class="endpoint-header">
+
+          <div>
+            <span class="method delete">DELETE</span>
+            <span class="endpoint-url">/api/v2/orders/{id}</span>
+          </div>
+
+          <button class="toggle-btn">
+            <i class="bi bi-chevron-down"></i>
+          </button>
+
+        </div>
+
+        <div class="endpoint-body">
+
+          <p>Delete order using order ID.</p>
+
+<pre><code>
+DELETE https://api.nova.com/v2/orders/101
+</code></pre>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ================= CODE EXAMPLES ================= -->
+
+    <section class="content-section" id="examples">
+
+      <div class="section-header">
+        <h2>Code Examples</h2>
+      </div>
+
+      <div class="tab-buttons">
+
+        <button class="tab-btn active" data-tab="javascript">
+          JavaScript
+        </button>
+
+        <button class="tab-btn" data-tab="python">
+          Python
+        </button>
+
+        <button class="tab-btn" data-tab="php">
+          PHP
+        </button>
+
+      </div>
+
+      <!-- JS -->
+
+      <div class="tab-content active" id="javascript">
+
+<pre><code>
+fetch('https://api.nova.com/v2/users')
+.then(res => res.json())
+.then(data => console.log(data))
+</code></pre>
+
+      </div>
+
+      <!-- PYTHON -->
+
+      <div class="tab-content" id="python">
+
+<pre><code>
+import requests
+
+response = requests.get(
+'https://api.nova.com/v2/users'
+)
+
+print(response.json())
+</code></pre>
+
+      </div>
+
+      <!-- PHP -->
+
+      <div class="tab-content" id="php">
+
+<pre><code>
+$response = file_get_contents(
+'https://api.nova.com/v2/users'
+);
+
+echo $response;
+</code></pre>
+
+      </div>
+
+    </section>
+
+    <!-- ================= RESPONSE ================= -->
+
+    <section class="content-section" id="response">
+
+      <div class="section-header">
+        <h2>Sample Response</h2>
+      </div>
+
+<pre><code>
+{
+   "success": true,
+   "message": "Users fetched successfully",
+   "data": [
+      {
+         "id": 1,
+         "name": "John Doe",
+         "email": "john@example.com"
+      }
+   ]
+}
+</code></pre>
+
+    </section>
+
+    <!-- ================= FAQ ================= -->
+
+    <section class="content-section" id="faq">
+
+      <div class="section-header">
+        <h2>Frequently Asked Questions</h2>
+      </div>
+
+      <div class="accordion" id="faqAccordion">
+
+        <div class="accordion-item">
+
+          <h2 class="accordion-header">
+
+            <button class="accordion-button"
+              data-bs-toggle="collapse"
+              data-bs-target="#faq1">
+
+              Is the API Free?
+
+            </button>
+
+          </h2>
+
+          <div id="faq1"
+            class="accordion-collapse collapse show">
+
+            <div class="accordion-body">
+              Yes, basic developer usage is free.
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+      <p>
+        © 2026 NovaAPI Documentation | College Project
+      </p>
+    </footer>
+
+  </div>
+
+  <!-- Bootstrap JS -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- External JS -->
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
