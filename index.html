@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,7 +26,7 @@
   <div class="sidebar" id="sidebar">
 
     <div class="logo-area">
-      <h2>NovaAPI</h2>
+      <h2>HydraAPI</h2>
       <p>Developer Documentation</p>
     </div>
 
@@ -114,7 +115,7 @@
           REST API v2.0
         </span>
 
-        <h1>Modern API Documentation</h1>
+        <h1>Tech API Documentation</h1>
 
         <p>
           Powerful APIs for developers with secure authentication,
@@ -146,7 +147,7 @@
         <div class="col-md-3">
           <div class="stats-card">
             <i class="bi bi-lightning-charge"></i>
-            <h3>99.9%</h3>
+            <h3>100.0%</h3>
             <p>API Uptime</p>
           </div>
         </div>
@@ -154,7 +155,7 @@
         <div class="col-md-3">
           <div class="stats-card">
             <i class="bi bi-code-square"></i>
-            <h3>45+</h3>
+            <h3>50+</h3>
             <p>Endpoints</p>
           </div>
         </div>
@@ -162,7 +163,7 @@
         <div class="col-md-3">
           <div class="stats-card">
             <i class="bi bi-globe"></i>
-            <h3>120+</h3>
+            <h3>90+</h3>
             <p>Countries</p>
           </div>
         </div>
@@ -203,7 +204,7 @@
 POST /api/v2/auth/login
 
 {
-   "email":"developer@novaapi.com",
+   "email":"developer@hydraapi.com",
    "password":"********"
 }
 </code></pre>
@@ -247,7 +248,7 @@ POST /api/v2/auth/login
           <p>Fetch all users from database.</p>
 
 <pre><code>
-GET https://api.nova.com/v2/users
+GET https://api.hydra.com/v2/users
 </code></pre>
 
           <table class="table table-dark table-striped">
@@ -342,14 +343,14 @@ GET https://api.nova.com/v2/users
           <p>Create a new product.</p>
 
 <pre><code>
-POST https://api.nova.com/v2/products
+POST https://api.hydra.com/v2/products
 </code></pre>
 
 <pre><code>
 {
    "name":"Macbook Pro",
-   "price":1999,
-   "stock":12
+   "price":12999,
+   "stock":10
 }
 </code></pre>
 
@@ -379,7 +380,7 @@ POST https://api.nova.com/v2/products
           <p>Delete order using order ID.</p>
 
 <pre><code>
-DELETE https://api.nova.com/v2/orders/101
+DELETE https://api.hydra.com/v2/orders/101
 </code></pre>
 
         </div>
@@ -417,7 +418,7 @@ DELETE https://api.nova.com/v2/orders/101
       <div class="tab-content active" id="javascript">
 
 <pre><code>
-fetch('https://api.nova.com/v2/users')
+fetch('https://api.hydra.com/v2/users')
 .then(res => res.json())
 .then(data => console.log(data))
 </code></pre>
@@ -432,7 +433,7 @@ fetch('https://api.nova.com/v2/users')
 import requests
 
 response = requests.get(
-'https://api.nova.com/v2/users'
+'https://api.hydra.com/v2/users'
 )
 
 print(response.json())
@@ -446,7 +447,7 @@ print(response.json())
 
 <pre><code>
 $response = file_get_contents(
-'https://api.nova.com/v2/users'
+'https://api.hydra.com/v2/users'
 );
 
 echo $response;
@@ -471,8 +472,8 @@ echo $response;
    "data": [
       {
          "id": 1,
-         "name": "John Doe",
-         "email": "john@example.com"
+         "name": "Rob",
+         "email": "rob@example.com"
       }
    ]
 }
@@ -523,7 +524,7 @@ echo $response;
 
     <footer>
       <p>
-        © 2026 NovaAPI Documentation | College Project
+        © 2026 HydraAPI Documentation | College Project
       </p>
     </footer>
 
